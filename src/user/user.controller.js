@@ -65,7 +65,7 @@ const login = async (req, res, next) => {
         res.cookie("authtoken", token, {
             path: "/", // cookie will be available for all routes
             maxAge: 24 * 60 * 60 * 1000, // cookie expiration in ms
-            domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.DOMAIN || undefined,
+            domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.CLIENT_URL || undefined,
             secure: process.env.ENVIRONMENT !== "dev", // only send cookie over https not the http
             httpOnly: true, // frontend cant read with JS, only backend can read it
 
@@ -88,7 +88,7 @@ const forgotPassword = async (req, res) => {
         }
 
         const token = await jwt.sign({id: user._id, email: user.email}, process.env.FORGOT_PASSWORD_SECRET, {expiresIn: "10m"});
-        const link = `${process.env.DOMAIN}/forgot-password?token=${token}`;
+        const link = `${process.env.CLIENT_URL}/forgot-password?token=${token}`;
         const sent = await sendMail(email, "Password Reset Link", forgotPasswordTemplate(user.fullName, link));
 
         if(!sent) {
@@ -127,7 +127,7 @@ const logout = async (req, res) => {
             secure: process.env.ENVIRONMENT !== "dev",
             sameSite: process.env.ENVIRONMENT === "dev" ? "lax" : "none",
             path: "/",
-            domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.DOMAIN || undefined,
+            domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.CLIENT_URL || undefined,
             maxAge: 0
         });
         res.status(200).json({message: "Logout successful"});
