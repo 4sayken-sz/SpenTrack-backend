@@ -4,12 +4,12 @@
   <strong>The robust API foundation for intuitive, secure, and insightful financial expense tracking.</strong>
 </p>
 
-<p align="center">
+<!-- <p align="center">
   <img alt="Build Status" src="https://img.shields.io/badge/build-passing-brightgreen?style=flat-square" />
   <img alt="License" src="https://img.shields.io/github/license/SpenTrack/SpenTrack-backend?style=flat-square" />
   <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
   <img alt="GitHub Stars" src="https://img.shields.io/github/stars/SpenTrack/SpenTrack-backend?style=social" />
-</p>
+</p> -->
 
 > Navigating personal finances can be a complex and often overwhelming task. Users frequently struggle with disparate tools, insecure data, and a lack of real-time insights into their spending habits. This fragmentation leads to poor financial decisions, missed savings opportunities, and a general lack of control over one's economic well-being.
 
@@ -17,12 +17,10 @@ The **SpenTrack-backend** addresses these critical pain points by providing a se
 
 ## Key Features ✨
 
-*   **🔐 Secure User Authentication & Authorization**: Robust JWT-based system ensuring only authorized users can access and manage their financial data.
-*   **💸 Comprehensive Expense Management**: Seamlessly create, read, update, and delete expenses with detailed categories, dates, and amounts.
-*   **📊 Dynamic Budget Tracking**: Define and monitor budgets across various categories, receiving real-time feedback on spending against allocated funds.
-*   **📈 Insightful Reporting & Analytics**: APIs to generate custom reports and aggregate data, providing users with a clear overview of their financial health.
-*   **⚙️ Scalable & Performant Architecture**: Built with Node.js and Express.js, designed for high throughput and low latency, ensuring a smooth user experience even under heavy load.
-*   **🛡️ Data Integrity & Validation**: Comprehensive input validation and data modeling to maintain the highest standards of financial data accuracy and reliability.
+*   **Secure User Authentication & Authorization**: Robust JWT-based system ensuring only authorized users can access and manage their financial data.
+*   **Expense Management**: Seamlessly create, read, update, and delete expenses with detailed categories, dates, and amounts.
+*   **Budget Tracking**: Define and monitor budgets across various categories, receiving real-time feedback on spending against allocated funds.
+*   **Scalable & Performant Architecture**: Built with Node.js and Express.js, designed for high throughput and low latency, ensuring a smooth user experience even under heavy load.
 
 ## Technical Architecture
 
