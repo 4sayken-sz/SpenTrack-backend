@@ -65,7 +65,7 @@ const login = async (req, res, next) => {
         res.cookie("authtoken", token, {
             path: "/", // cookie will be available for all routes
             maxAge: 24 * 60 * 60 * 1000, // cookie expiration in ms
-            domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.CLIENT_URL || undefined,
+            // domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.CLIENT_URL || undefined,
             secure: process.env.ENVIRONMENT !== "dev", // only send cookie over https not the http
             httpOnly: true, // frontend cant read with JS, only backend can read it
 
@@ -127,7 +127,7 @@ const logout = async (req, res) => {
             secure: process.env.ENVIRONMENT !== "dev",
             sameSite: process.env.ENVIRONMENT === "dev" ? "lax" : "none",
             path: "/",
-            domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.CLIENT_URL || undefined,
+            // domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.CLIENT_URL || undefined,
             maxAge: 0
         });
         res.status(200).json({message: "Logout successful"});

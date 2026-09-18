@@ -76,7 +76,7 @@ const invalidAccess = (res) => {
         secure: process.env.ENVIRONMENT !== "dev",
         sameSite: process.env.ENVIRONMENT === "dev" ? "lax" : "none",
         path: "/",
-        domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.CLIENT_URL || undefined,
+        // domain: process.env.ENVIRONMENT === "dev" ? "localhost" : process.env.CLIENT_URL || undefined,
         maxAge: 0
     })
     res.status(400).json({message: "Unauthorized Access"});
