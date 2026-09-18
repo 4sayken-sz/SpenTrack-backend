@@ -2,6 +2,7 @@ import nodemailer from 'nodemailer';
 
 const sendMail = async (email, subject, template) => {
     try {
+        console.log("Sending email to:", email, "with subject:", subject);
         const config = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -20,7 +21,7 @@ const sendMail = async (email, subject, template) => {
         await config.sendMail(mailOptions);
         return true;
     } catch (error) {
-        console.error("Detailed email error code/msg:", error.code, error.message, error.stack);
+        console.log("Detailed email error code/msg:", error.code, error.message, error.stack);
         return false;
     }
 }
