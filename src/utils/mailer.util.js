@@ -20,7 +20,7 @@ const sendMail = async (email, subject, template) => {
         await config.sendMail(mailOptions);
         return true;
     } catch (error) {
-        console.error("Error sending email:", error);
+        console.error("Detailed email error code/msg:", error.code, error.message, error.stack);
         return false;
     }
 }

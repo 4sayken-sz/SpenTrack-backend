@@ -31,7 +31,10 @@ app.use(express.urlencoded({extended: false}));
 
 // Middleware - route level
 // Routes
-app.get("/", (req, res) => res.json({ message: "Hello from the backend!" }));
+app.get("/", (req, res) => {
+    console.log("Hello from backend");
+    res.json({message: "Hello from backend"});
+});
 
 // User routes
 import userRouter from "./user/user.routes.js";
