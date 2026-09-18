@@ -18,8 +18,21 @@ mongoose.connect(process.env.DB_URL)
 // Middleware - cookie parser/cors
 import cookieParser from "cookie-parser";
 import cors from "cors";
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  "http://localhost:5173"
+].filter(Boolean);
+
 app.use(cors({
-    origin: process.env.CLIENT_URL,
+    origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        
+        if (allowedOrigins.includes(origin)) {
+            callback(null, origin);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }));
 app.use(cookieParser());
