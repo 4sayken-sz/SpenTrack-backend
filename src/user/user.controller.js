@@ -26,16 +26,28 @@ const sendOTPEMail = async (req, res) => {
             res.status(400).json({message: "User already exists"});
             return;
         }
-        const success = await sendMail(email, "OTP for Signup", otpTemplate(otp));
-        if(!success) {
-            res.status(500).json({message: "Failed to send OTP"});
-        } else {
-            res.json({message: "OTP sent successfully", otp: otp});
+        // const success = await sendMail(email, "OTP for Signup", otpTemplate(otp));
+        // if(!success) {
+        //     res.status(500).json({message: "Failed to send OTP"});
+        // } else {
+        //     res.json({message: "OTP sent successfully", otp: otp});
+        // }
+        
+        const mailResult = await sendMail(email, "OTP for Signup", otpTemplate(otp));
+        if(!mailResult.success) {
+            return res.status(500).json({
+                message: "Failed to send OTP",
+                debugError: mailResult.error,
+                debugCode: mailResult.code
+            });
         }
+
     } catch(err) {
         res.status(500).json({message: err.message});
     }
 }
+
+
 
 const login = async (req, res, next) => {
     try {
