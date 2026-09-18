@@ -11,8 +11,6 @@
   <img alt="GitHub Stars" src="https://img.shields.io/github/stars/SpenTrack/SpenTrack-backend?style=social" />
 </p>
 
-## The Strategic "Why"
-
 > Navigating personal finances can be a complex and often overwhelming task. Users frequently struggle with disparate tools, insecure data, and a lack of real-time insights into their spending habits. This fragmentation leads to poor financial decisions, missed savings opportunities, and a general lack of control over one's economic well-being.
 
 The **SpenTrack-backend** addresses these critical pain points by providing a secure, scalable, and high-performance API service. It acts as the central nervous system for any financial management application, offering a unified platform for tracking expenses, categorizing transactions, managing budgets, and generating insightful reports. By abstracting the complexities of data persistence and business logic, SpenTrack-backend empowers developers to build feature-rich, user-friendly financial applications that deliver clarity and control to their users.
